@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./login.scss";
 import { useState } from "react";
 import { LoginValidation } from "./logic";
 import Instance from "../../service/Instance";
+
+
 const Login = () => {
+  const navigation = useNavigate();
   
   const[errors, setErrors] = useState({
     email: '',
@@ -20,7 +23,6 @@ const Login = () => {
     if(validate.email || validate.password){
       setErrors(validate);
       return;
-
     }
     else{
       setErrors({
@@ -30,11 +32,28 @@ const Login = () => {
     }
 
     try{
-      const res = await Instance.post('/login')
+      const res = await Instance.post('/user/login', {
+        email,
+        password
+      })
       console.log(res)
+      navigation('/dashboard')
+
     }
     catch(err){
-      console.log(err)
+      console.log(err.response.data.message)
+      if(err.response.data.message === 'User not found'){
+        setErrors({
+          email: 'User not found',
+          password: ''
+        })
+      }
+      else if(err.response.data.message === 'Invalid credentials'){
+        setErrors({
+          email: '',
+          password: 'Invalid password'
+        })
+      }
     }
   }
   return (
