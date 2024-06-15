@@ -1,0 +1,75 @@
+#cow-table {
+    width: 100%;
+    border-collapse: collapse;
+  
+    thead {
+      tr {
+        th {
+          padding: 12px 10px;
+          background-color: rgb(46, 46, 46);
+          color: white;
+          text-align: left;
+          border: 1px solid #e0e0e0;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 14px;
+          word-wrap: none;
+          white-space: nowrap;
+        }
+  
+        .actions {
+          text-align: center;
+        }
+      }
+    }
+  
+    tbody {
+      tr {
+        td {
+          padding: 10px;
+          border: 1px solid #e0e0e0;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 14px;
+        }
+  
+        .not-active{
+          color: #da4b4b;
+        }
+  
+        .active{
+          color: #4bda4b;
+          background-color: #fff;
+        }
+  
+        .action-col {
+          span {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+  
+            button {
+              padding: 3px 10px;
+              margin-left: 5px;
+              width: 60px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              font-size: 12px;
+              border: none;
+              background-color: rgb(138, 72, 245);
+              color: white;
+              padding: 5px 10px;
+              cursor: pointer;
+  
+              &:hover {
+                background-color: rgb(138, 72, 245, 0.8);
+              }
+              &:active {
+                background-color: rgb(138, 72, 245, 0.6);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+#side-bar {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  background: rgb(37, 139, 39);
+  background: linear-gradient(
+    131deg,
+    rgb(23, 116, 24) 0%,
+    rgb(8, 189, 134) 100%
+  );
+
+  .logo {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2c2c2c;
+    font-size: 17px;
+    font-family: "Bellota", system-ui;
+    display: flex;
+    justify-content: center;
+
+    span{
+      
+    }
+
+    img{
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 20px;
+
+    li {
+      .nav-link {
+        max-width: 90%;
+        align-items: center;
+        margin: 0 auto;
+        background-color: #f3f3f3;
+        margin-bottom: 12px;
+        padding: 10px 5px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #202020;
+        text-decoration: none;
+        font-family: arial;
+        font-size: 13px;
+        border-radius: 3px;
+        transition: background-color 0.3s;
+        font-weight: 100;
+
+        &:hover {
+          background-color: #dbdbdb;
+        }
+      }
+
+      .active {
+        background-color: #1f1f1f;
+        color: #ffffff;
+
+        &:hover {
+          background-color: rgb(27, 27, 27);
+        }
+      }
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #bdbdbd;
+    border-radius: 10px;
+  }
+}

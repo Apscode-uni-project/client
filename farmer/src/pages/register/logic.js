@@ -1,8 +1,9 @@
-export const loginValidation = (fName, lName, email, password, confirmPassword) => {
+export const loginValidation = (fName, lName, email, nic, password, confirmPassword) => {
     const errors = {
         fName: "",
         lName: "",
         email: "",
+        nic: "",
         password: "",
         confirmPassword: "",
     };
@@ -19,6 +20,12 @@ export const loginValidation = (fName, lName, email, password, confirmPassword) 
         errors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(email)) {
         errors.email = "Email address is invalid";
+    }
+
+    if (!nic) {
+        errors.nic = "NIC is required";
+    } else if (nic.length < 10) {
+        errors.nic = "NIC needs to be 10 characters or more";
     }
     
     if (!password) {
