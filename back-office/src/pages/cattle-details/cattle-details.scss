@@ -1,3 +1,121 @@
-#cattle-details{
-    
+#cattle-details {
+  font-family: Arial, Helvetica, sans-serif;
+  .basic_info {
+    margin-bottom: 20px;
+    background-color: #f3f3f3;
+    padding: 20px;
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #4e2fff;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 300px;
+
+      th,
+      td {
+        border: none;
+        padding: 5px;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #dfdfdf;
+          border-radius: 5px;
+          box-sizing: border-box;
+          cursor: pointer;
+        }
+
+        select {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #dfdfdf;
+          border-radius: 5px;
+          box-sizing: border-box;
+          cursor: pointer;
+        }
+
+        input[name="email"] {
+          cursor: not-allowed;
+        }
+        input[name="id"] {
+          cursor: not-allowed;
+        }
+      }
+
+      .key {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .vaccine_info {
+    margin-bottom: 20px;
+    background-color: #f3f3f3;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #4e2fff;
+      margin-bottom: 15px;
+    }
+  }
+
+  .checkup {
+    margin-bottom: 20px;
+    background-color: #f3f3f3;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    overflow: auto;
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #4e2fff;
+    }
+
+    .add-checkup {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #48a3ee;
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .icon {
+        font-size: 1.5rem;
+        color: #48a3ee;
+        cursor: pointer;
+        margin-right: 0.5rem;
+      }
+
+      &:hover p,
+      &:hover .icon {
+        color: #1128f8;
+      }
+    }
+  }
 }

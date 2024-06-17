@@ -1,28 +1,29 @@
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./main-layout.scss";
 import Nav from "../components/nav/Nav";
-import SideBar from "../components/side-bar/SideBar";
+import MainOutlet from "../components/main-outlet-layout/MainOutlet";
+import NavMobile from "../components/nav/NavMobile";
 
 const MainLayout = () => {
+  const [mobileNav, setMobileNav] = useState(false);
   return (
     <div id="main-layout">
       <div className="with-sidebar-container">
-        <div className="side-bar">
-          <SideBar />
-
-          <div className="user-info">
-            <p className="name">Apscode</p>
-            <p className="role"> Farmer</p>
-
-            <button className="logout">Logout</button>
-          </div>
-        </div>
         <div className="content">
           <div className="nav">
-            <Nav />
+            <div className="desktop-nav-bar">
+              <Nav />
+            </div>
+
+            <div className="mobile-nav-bar">
+              <NavMobile mobileNav={mobileNav} setMobileNav={setMobileNav} />
+            </div>
           </div>
           <div className="outlet">
-          <Outlet />
+            <MainOutlet>
+              <Outlet />
+            </MainOutlet>
           </div>
         </div>
       </div>

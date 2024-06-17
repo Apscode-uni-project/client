@@ -42,15 +42,15 @@ const Table = ({cattles}) => {
 
       <tbody>
         {
-          cattles.map((cattle) => (
+          cattles.length > 0 ? cattles.map((cattle) => (
             <CreateRow
               key={cattle.id}
               id={cattle.id}
               name={cattle.name}
-                birthDate={cattle.birthday.split('T')[0]}
+                birthDate={`${new Date(cattle.birthday).getFullYear()}-${new Date(cattle.birthday).getMonth() + 1}-${new Date(cattle.birthday).getDate()}`}
                 owner={cattle.nic}
             />
-          ))
+          )): <tr><td colSpan="5" style={{textAlign: 'center'}}>No data</td></tr>
         }
       </tbody>
     </table>

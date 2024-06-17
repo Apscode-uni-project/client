@@ -37,7 +37,7 @@ const Login = () => {
         password
       })
       console.log(res)
-      navigation('/dashboard')
+      navigation('/cattle')
 
     }
     catch(err){

@@ -1,13 +1,13 @@
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./pages/login/Login";
 import MainLayout from "./layouts/MainLayout";
-import Dashboard from "./pages/dashboard/Dashboard";
 import CheckAuth from "./utility/CheckAuth";
 import CheckNotAuth from "./utility/CheckNotAuth";
 import Users from "./pages/users/Users";
 import Cattle from "./pages/cattle/Cattle";
 import CattleDetails from "./pages/cattle-details/CattleDetails";
 import Vaccine from "./pages/vaccine/Vaccine";
+import DailyReport from "./pages/report/DailyReport";
 
 
 const router = createBrowserRouter([
@@ -17,11 +17,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Navigate to="/dashboard" />
+        element: <Navigate to="/users" />
       },
       {
-        path: '/dashboard',
-        element: <Dashboard />
+        path: '/report',
+        element: <DailyReport />
       },
       {
         path: '/users',

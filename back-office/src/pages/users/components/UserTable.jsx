@@ -2,7 +2,16 @@
 /* eslint-disable no-unused-vars */
 import "./user-table.scss";
 
-const CreateRow = ({ id, fName, lName, email, nic, role, active, setUserID }) => {
+const CreateRow = ({
+  id,
+  fName,
+  lName,
+  email,
+  nic,
+  role,
+  active,
+  setUserID,
+}) => {
   return (
     <tr>
       <td>{id}</td>
@@ -13,21 +22,25 @@ const CreateRow = ({ id, fName, lName, email, nic, role, active, setUserID }) =>
       </td>
       <td>{nic}</td>
       <td>{role}</td>
-      <td
-        className={active == 0 ? "not-active" : "active"}
-      >{active == 0 ? "Not Active" : "Activated"}</td>
+      <td className={active == 0 ? "not-active" : "active"}>
+        {active == 0 ? "Not Active" : "Activated"}
+      </td>
       <td className="action-col">
         <span>
-          <button onClick={() => {
-            setUserID(id);
-          }} >More</button>
+          <button
+            onClick={() => {
+              setUserID(id);
+            }}
+          >
+            More
+          </button>
         </span>
       </td>
     </tr>
   );
 };
 
-const UserTable = ({users, setUserID}) => {
+const UserTable = ({ users, setUserID }) => {
   return (
     <table id="user-table">
       <thead>
@@ -44,7 +57,7 @@ const UserTable = ({users, setUserID}) => {
       </thead>
 
       <tbody>
-        {
+        {users.length > 0 ? (
           users.map((user) => (
             <CreateRow
               key={user.user_id}
@@ -58,7 +71,13 @@ const UserTable = ({users, setUserID}) => {
               setUserID={setUserID}
             />
           ))
-        }
+        ) : (
+          <tr>
+            <td colSpan="8" style={{ textAlign: "center" }}>
+              No data
+            </td>
+          </tr>
+        )}
       </tbody>
     </table>
   );

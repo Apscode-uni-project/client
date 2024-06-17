@@ -1,0 +1,20 @@
+#mainOutlet{
+ .title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 3px;
+    border: 1px solid #e0e0e0;
+}   
+
+ .children{
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #e0e0e0;
+ }
+}

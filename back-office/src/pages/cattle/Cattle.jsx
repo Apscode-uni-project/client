@@ -37,7 +37,9 @@ const Cattle = () => {
         </div>
       </div>
 
+      <div className="c-table">
       <Table cattles={cattle} />
+      </div>
     </div>
     </>
   );

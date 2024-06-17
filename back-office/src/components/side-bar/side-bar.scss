@@ -11,6 +11,7 @@
     rgb(23, 116, 24) 0%,
     rgb(8, 189, 134) 100%
   );
+  // margin-top: 50px;
 
   .logo {
     width: 100%;
@@ -24,6 +25,7 @@
     font-family: "Bellota", system-ui;
     display: flex;
     justify-content: center;
+    
 
     span{
       
@@ -33,6 +35,10 @@
       width: 30px;
       height: 30px;
       margin-right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      padding-left: 20px;
     }
   }
 
@@ -87,3 +93,4 @@
     border-radius: 10px;
   }
 }
+

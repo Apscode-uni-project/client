@@ -1,0 +1,203 @@
+#cattle-details {
+  font-family: Arial, Helvetica, sans-serif;
+  .basic_info {
+    margin-bottom: 20px;
+    background-color: #f3f3f3;
+    padding: 20px;
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #4e2fff;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 300px;
+
+      th,
+      td {
+        border: none;
+        padding: 5px;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #dfdfdf;
+          border-radius: 5px;
+          box-sizing: border-box;
+          cursor: pointer;
+        }
+
+        select {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #dfdfdf;
+          border-radius: 5px;
+          box-sizing: border-box;
+          cursor: pointer;
+        }
+
+        input[name="email"] {
+          cursor: not-allowed;
+        }
+        input[name="id"] {
+          cursor: not-allowed;
+        }
+      }
+
+      .key {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .vaccine_info {
+    margin-bottom: 20px;
+    background-color: #f3f3f3;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #4e2fff;
+      margin-bottom: 15px;
+    }
+
+    .table{
+      width: 100%;
+      overflow: auto;
+      max-height: 450px;
+
+    }
+  }
+
+  .checkup {
+    margin-bottom: 20px;
+    background-color: #f3f3f3;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    overflow: auto;
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #4e2fff;
+    }
+
+    .add-checkup {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #48a3ee;
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .icon {
+        font-size: 1.5rem;
+        color: #48a3ee;
+        cursor: pointer;
+        margin-right: 0.5rem;
+      }
+
+      &:hover p,
+      &:hover .icon {
+        color: #1128f8;
+      }
+    }
+  }
+}
+
+#vaccine-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    tr {
+      th {
+        padding: 12px 10px;
+        background-color: rgb(46, 46, 46);
+        color: white;
+        text-align: left;
+        border: 1px solid #e0e0e0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        word-wrap: none;
+        white-space: nowrap;
+      }
+
+      .actions {
+        text-align: center;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+      }
+
+      .not-active{
+        color: #da4b4b;
+      }
+
+      .active{
+        color: #4bda4b;
+        background-color: #fff;
+      }
+
+      .action-col {
+        span {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+
+          button {
+            padding: 3px 10px;
+            margin-left: 5px;
+            width: 60px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 12px;
+            border: none;
+            background-color: rgb(216, 75, 75);
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: rgba(230, 26, 26, 0.8);
+            }
+            &:active {
+              background-color: rgb(138, 72, 245, 0.6);
+            }
+          }
+        }
+      }
+    }
+  }
+}

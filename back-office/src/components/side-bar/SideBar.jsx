@@ -5,10 +5,6 @@ import "./side-bar.scss";
 const SideBar = () => {
   const links = [
     {
-      name: "Dashboard",
-      to: "/dashboard",
-    },
-    {
       name: "User Management",
       to: "/users",
     },
@@ -21,11 +17,12 @@ const SideBar = () => {
       to: "/vaccine",
     },
     {
-      name: "Past Checkup",
-      to: "/past-checkup",
+      name: "Daily Report",
+      to: "/report",
     },
   ];
   return (
+    <>
     <div id="side-bar">
         <div className="logo">
           <img src={Logo} alt="logo" />
@@ -41,6 +38,7 @@ const SideBar = () => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 

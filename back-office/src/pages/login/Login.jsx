@@ -38,7 +38,7 @@ const Login = () => {
         admin: true
       })
       console.log(res)
-      navigation('/dashboard')
+      navigation('/')
 
     }
     catch(err){
