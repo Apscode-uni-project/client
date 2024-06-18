@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import CheckupTable from "./component/CheckupTable";
+import { BsFillFolderSymlinkFill } from "react-icons/bs";
+import { VscLoading } from "react-icons/vsc";
+
+
 import VaccineReportTable from "./component/VaccineReportTable";
 import "./daily-report.scss";
 import Instance from "../../service/Instance";
@@ -8,6 +12,7 @@ const DailyReport = () => {
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0]);
   const [vaccines, setVaccines] = useState([]);
   const [checkups, setCheckups] = useState([]);
+  const [loading, setLoading] = useState(false);
   
   useEffect(() => {
     const fetchVaccines = async () => {
@@ -34,6 +39,24 @@ const DailyReport = () => {
     fetchVaccines();
     fetchCheckups();
   }, [selectedDate])
+
+  const requestReportToEmail = async () => {
+    setLoading(true)
+    try{
+      const res = await Instance.get(`/user/report-to-email/${selectedDate}`);
+      setVaccines(res.data);
+      console.log(res.data);
+      setLoading(false)
+      alert(res.data.message)
+    }
+    catch(err){
+      console.log(err);
+      setLoading(false)
+      alert("Report can't send to email!")
+    }
+  }
+
+
   return (
     <div id="daily-report">
       <div className="filter-section">
@@ -42,6 +65,15 @@ const DailyReport = () => {
           value={selectedDate}
           onChange={(e) => setSelectedDate(e.target.value)}
         />
+
+        <div className="request-report">
+
+          <button className="icon-cont" onClick={requestReportToEmail} disabled={loading} >
+          {
+            loading ? <VscLoading className="icon loading" title="Request Report to Email" /> : <BsFillFolderSymlinkFill className="icon" title="Request Report to Email" />
+          } 
+          </button>
+        </div>
       </div>
       <div
         className="vaccine-table"
