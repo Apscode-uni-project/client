@@ -10,10 +10,6 @@ const Nav = () => {
   const [user, setUser] = useState();
   const navLinks = [
     {
-      name: "Dashboard",
-      path: "/dashboard",
-    },
-    {
       name: "Cattle",
       path: "/cattle",
     },

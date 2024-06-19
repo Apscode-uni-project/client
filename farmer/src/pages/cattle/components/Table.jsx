@@ -50,7 +50,7 @@ const Table = ({cattles}) => {
                 birthDate={`${new Date(cattle.birthday).getFullYear()}-${new Date(cattle.birthday).getMonth() + 1}-${new Date(cattle.birthday).getDate()}`}
                 owner={cattle.nic}
             />
-          )): <tr><td colSpan={5}>No cattle found</td></tr>
+          )): <tr><td colSpan={5} style={{textAlign: 'center'}}>No cattle found</td></tr>
         }
       </tbody>
     </table>
